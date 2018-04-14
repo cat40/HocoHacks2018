@@ -1,0 +1,16 @@
+Tasks:
+User input
+	Inputs social media
+		Ignore things on non-social media account only if it's a username
+	Name
+	City, state
+	School/work
+	Activities
+	
+Search google
+	Use google on pip
+	
+Discover is result is relevant
+	Check caps
+	Check address, things
+Remove websites like white pages
