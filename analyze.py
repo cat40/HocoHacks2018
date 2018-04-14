@@ -1,4 +1,4 @@
-def analyze(results, user):
+def analyze(results, user, level):
     '''
     in this order:
     check if url is on the blacklist
@@ -6,7 +6,7 @@ def analyze(results, user):
     check activities
     '''
     for result in results:
-        if isrelevent(result, user):
+        if isrelevent(result, user, level):
             yield result
 
 #equilivnet to 'return url not in user.blacklist and any(name in text for name in names) and any(acitivity in user.activitys)
@@ -17,17 +17,13 @@ def isrelevent(result, user, level):
     if 'blacklist' in user.keys() and url in user['blacklist']:
         return False
     #make sure one of the user's names is in the website
+    names = 'names' in user.keys() and not any(name in text for name in user['names'])
+    activs = 'activities' in user.keys() and any(activity in text for activity in user['activities'])
+    address = 'addresses' in user.keys() and any(address in text for address in user['addresses'])
     if level==0:
-        if 'names' in user.keys() and not any(name in text for name in user['names']):
-            return False
-        #check activities
-        return'activities' in user.keys() and any(activity in text for activity in user['activities'])
+        return names
     elif level==1:
-        if 'names' in user.keys() and any(name in text for name in user['names']):
-            return True
-        return'activities' in user.keys() and any(activity in text for activity in user['activities'])
+        return names and (activs or address)
     else:
-        if 'names' in user.keys() or any(name in text for name in user['names']):
-            return True
-        return'activities' in user.keys() and any(activity in text for activity in user['activities'])
+        return names and activs and address
 

@@ -1,5 +1,6 @@
 import search, Input, analyze, queryList
 import cPickle as pickle
+import frequencies
 
 attributes = Input.takeInput()
 
@@ -8,9 +9,11 @@ try:
         found = pickle.load(f)
 except IOError: found = []
 
+name = attributes['names'][0].split(' ')[1] #get last name
+
 for query in queryList.queryList(attributes):
     print query
-    results = list(analyze.analyze(search.getSearch(query), attributes))
+    results = list(analyze.analyze(search.getSearch(query), attributes, frequencies.getLevels(name)))
     for url, result in results:
         if url not in found:
             found.append(url)
