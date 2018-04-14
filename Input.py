@@ -15,7 +15,6 @@ def takeInput():
     attributes = dict()
     
     print "This is a program that checks if google has updated information on yourself"
-<<<<<<< HEAD
     print "Input a list of names, activities, addresses etc. \n(use 'end' to stop inputting parameters)"
     
     nameList = []
@@ -51,16 +50,11 @@ def takeInput():
     
     with open('config', 'w') as f:
         pickle.dump(attributes, f)
-=======
-    print "Input a list of activities, addresses etc. \n(use 'end' to stop inputting parameters)")
-    for par in ('names', 'activities', 'addresses'):
-        attributes[par] = #input thing
-    pickle.dump(attributes, 'config')
->>>>>>> 01cb6c931e5b63aa863053c607daf5ab0646705f
     return attributes
 
 
 if __name__ == '__main__':   
     takeInput()
-    file = open("config", "r")
-    print(file.readlines())
+    with open('config') as f: 
+       print(pickle.load(f))
+    
