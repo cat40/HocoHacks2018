@@ -44,9 +44,22 @@ def takeInput():
         else:
             activitiesList.append(inp)
         i += 1
+    i = 1
     attributes["name"] = nameList
     attributes["activities"] = activitiesList   
     attributes["addresses"] = addressesList 
+    
+    blackList = []
+    
+    print("Please input site names that you know you have an account of \nsuch as Facebook, Instagram etc. (use end to stop)")
+    while True :
+        inp = raw_input("Blacklist " + str(i) + ": ")
+        if(inp == "end"):
+            break
+        else:
+            blackList.append(inp)
+        i += 1
+    attributes["Blacklist"] = blackList
     
     with open('config', 'w') as f:
         pickle.dump(attributes, f)
