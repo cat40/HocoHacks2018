@@ -1,10 +1,12 @@
 # creates a list of search terms
 def queryList(d):
     terms = []
-    for nameOnly in d['names']:
-        terms.append(nameOnly)
+    if 'names' in d.keys():
+        terms += d['names']
     for n in d['names']:
-        for l in d['addresses']:
+        if 'addresses' in d.keys():
+            for l in d['addresses']:
+                terms.append(n+' '+l)
             for a in d['activities']:
-                terms.append(n+' '+l+' '+a)
+                terms.append(n+' '+a)
     return terms

@@ -1,4 +1,4 @@
-import search, Input, analyze
+import search, Input, analyze, queryList
 import cPickle as pickle
 
 attributes = Input.takeInput()
@@ -8,7 +8,7 @@ try:
         found = pickle.load(f)
 except IOError: found = []
 
-for query in attributes['name']:#queryList(attributes):
+for query in queryList.queryList(attributes):
     print query
     results = list(analyze.analyze(search.getSearch(query), attributes))
     for url, result in results:

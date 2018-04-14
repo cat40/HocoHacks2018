@@ -24,7 +24,9 @@ def takeInput():
     while True :
         inp = raw_input("name " + str(i) + ": ")
         if(inp == "end"):
-            break
+            if len(nameList):
+                break
+            else: print 'you must input at least 1 name'
         else:
             nameList.append(inp)
         i += 1
@@ -45,7 +47,7 @@ def takeInput():
             activitiesList.append(inp)
         i += 1
     i = 1
-    attributes["name"] = nameList
+    attributes["names"] = nameList
     attributes["activities"] = activitiesList   
     attributes["addresses"] = addressesList 
     
