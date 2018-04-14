@@ -15,11 +15,11 @@ def analyze(results, user):
 def isrelevent(result, user):
     url, text = result
     #check url
-    if 'blacklist' in user.keys and url in user['blacklist']:
+    if 'blacklist' in user.keys() and url in user['blacklist']:
         return False
     #make sure one of the user's names is in the website
     if 'names' in user.keys() and not any(name in text for name in user['names']):
         return False
     #check activities
-    return any(activity in text for activity in activities)
+    return'activities' in user.keys() and any(activity in text for activity in user['activities'])
     
