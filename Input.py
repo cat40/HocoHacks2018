@@ -32,7 +32,7 @@ def takeInput():
         i += 1
     i = 1
     
-    gradeList = [raw_input("grade (or highest level of education):")]
+    # #gradeList = [raw_input("grade (or highest level of education):")]
     
     while True :
         inp = raw_input("addresses " + str(i) + ": ")
@@ -54,7 +54,7 @@ def takeInput():
     attributes["names"] = nameList
     attributes["activities"] = activitiesList   
     attributes["addresses"] = addressesList 
-    attributes["grade"] = gradeList
+    # #attributes["grade"] = gradeList
     
     blackList = []
     
