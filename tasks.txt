@@ -10,7 +10,7 @@ User input
 Search google
 	Use google on pip
 	
-Discover is result is relevant
+Discover if result is relevant
 	Check caps
 	Check address, things
 Remove websites like white pages
