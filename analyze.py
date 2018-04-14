@@ -6,7 +6,8 @@ def analyze(results, user):
     check activities
     '''
     for result in results:
-        yield result, isrelevent(result, user)
+        if isrelevent(result, user):
+            yield result
 
 
 #equilivnet to 'return url not in user.blacklist and any(name in text for name in names) and any(acitivity in user.activitys)
