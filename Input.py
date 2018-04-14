@@ -26,7 +26,7 @@ def takeInput():
         if(inp == "end"):
             break
         else:
-            nameList.append(input)
+            nameList.append(inp)
         i += 1
     i = 1
     while True :
@@ -34,7 +34,7 @@ def takeInput():
         if(inp == "end"):
             break
         else:
-            addressesList.append(input)
+            addressesList.append(inp)
         i += 1
     i = 1
     while True :
@@ -42,7 +42,7 @@ def takeInput():
         if(inp == "end"):
             break
         else:
-            activitiesList.append(input)
+            activitiesList.append(inp)
         i += 1
     attributes["name"] = nameList
     attributes["activities"] = activitiesList   
@@ -55,4 +55,5 @@ def takeInput():
 
 if __name__ == '__main__':   
     takeInput()
-    
+    with open('config') as f: 
+         print(pickle.load(f))
