@@ -10,13 +10,14 @@ def analyze(results, user):
 
 
 #equilivnet to 'return url not in user.blacklist and any(name in text for name in names) and any(acitivity in user.activitys)
+#will return false if user doesn't have any relevent keys
 def isrelevent(result, user):
     url, text = result
     #check url
-    if url in user.blacklist:
+    if 'blacklist' in user.keys and url in user['blacklist']:
         return False
     #make sure one of the user's names is in the website
-    if not any(name in text for name in names):
+    if 'names' in user.keys() and not any(name in text for name in user['names']):
         return False
     #check activities
     return any(activity in text for activity in activities)
