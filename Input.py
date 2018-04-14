@@ -31,6 +31,9 @@ def takeInput():
             nameList.append(inp)
         i += 1
     i = 1
+    
+    gradeList = [raw_input("grade:")]
+    
     while True :
         inp = raw_input("addresses " + str(i) + ": ")
         if(inp == "end"):
@@ -47,9 +50,11 @@ def takeInput():
             activitiesList.append(inp)
         i += 1
     i = 1
+    
     attributes["names"] = nameList
     attributes["activities"] = activitiesList   
     attributes["addresses"] = addressesList 
+    attributes["grade"] = gradeList
     
     blackList = []
     
