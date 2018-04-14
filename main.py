@@ -12,7 +12,7 @@ except IOError: found = []
 name = attributes['names'][0].split(' ')[1] #get last name
 
 for query in queryList.queryList(attributes):
-    print query
+    #print query
     results = list(analyze.analyze(search.getSearch(query), attributes, frequencies.getLevels(name)))
     for url, result in results:
         if url not in found:
