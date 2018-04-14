@@ -17,9 +17,9 @@ def isrelevent(result, user, level):
     if 'blacklist' in user.keys() and url in user['blacklist']:
         return False
     #make sure one of the user's names is in the website
-    names = 'names' in user.keys() and not any(name in text for name in user['names'])
-    activs = 'activities' in user.keys() and any(activity in text for activity in user['activities'])
-    address = 'addresses' in user.keys() and any(address in text for address in user['addresses'])
+    names = 'names' in user.keys() and any(name.lower() in text.lower() for name in user['names'])
+    activs = 'activities' in user.keys() and any(activity.lower() in text.lower() for activity in user['activities'])
+    address = 'addresses' in user.keys() and any(address.lower() in text.lower() for address in user['addresses'])
     if level==0:
         return names
     elif level==1:
