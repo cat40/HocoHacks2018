@@ -55,5 +55,5 @@ def takeInput():
 
 if __name__ == '__main__':   
     takeInput()
-    with open('config') as f: 
-         print(pickle.load(f))
+    # #with open('config') as f: 
+    # #     print(pickle.load(f))
