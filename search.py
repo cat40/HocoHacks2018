@@ -8,7 +8,7 @@ def getHTML(url):
         return html.read()
     except IOError, e:
         # if e.errno == 10054:
-        print e
+        # # print e
         return ''
 
     
