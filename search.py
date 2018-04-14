@@ -13,7 +13,7 @@ def getHTML(url):
 
     
 def getSearch(query):
-    for u in googlesearch.search(query, num=5, stop=1):  # , pause=10):
-        print u
+    for u in googlesearch.search(query, num=10, stop=1):  # , pause=10):
+        # #print u
         h = getHTML(u)
         yield u, h

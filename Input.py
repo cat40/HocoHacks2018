@@ -35,7 +35,7 @@ def takeInput():
     # #gradeList = [raw_input("grade (or highest level of education):")]
     
     while True :
-        inp = raw_input("addresses " + str(i) + ": ")
+        inp = raw_input("city " + str(i) + ": ")
         if(inp == "end"):
             break
         else:
