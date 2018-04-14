@@ -15,7 +15,7 @@ def takeInput():
     attributes = dict()
     
     print "This is a program that checks if google has updated information on yourself"
-    print "Input a list of names, activities, addresses etc. \n(use 'end' to stop inputting parameters)"
+    print "Input a list of names (Full name first), activities, addresses etc. \n(use 'end' to stop inputting parameters)"
     
     nameList = []
     activitiesList = []
