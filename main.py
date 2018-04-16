@@ -18,6 +18,7 @@ for query in queryList.queryList(attributes):
         if url not in found:
             found.append(url)
             print 'New item found! The website %s contains references to you' % url
+print 'done searching'
 
 with open('found.pkl', 'w') as f:
     pickle.dump(found, f)
